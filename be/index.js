@@ -4,6 +4,8 @@ import "./db/config.js"
 import User from "./db/User.js"
 import Blog from "./db/Blog.js"
 import Contact from "./db/Contact.js"
+import dotenv from "dotenv";
+dotenv.config();
 
 const app = express();
 app.use(cors());
@@ -65,7 +67,7 @@ app.get("/country/:country", async(req, res) => {
     res.send(blogs);
 });
 
-const port = 5000;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
     console.log(`http://localhost:${port}`);
 });
