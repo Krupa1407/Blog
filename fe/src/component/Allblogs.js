@@ -10,7 +10,7 @@ function Allblogs() {
 
   const fetchblogs = async () => {
     try {
-      let blogs = await fetch("http://localhost:5000/blogs", {
+      let blogs = await fetch(`${process.env.REACT_APP_API_URL}/blogs`, {
         method: "get",
         headers: {
           "Content-Type": "application/json"

@@ -12,7 +12,7 @@ function Signup() {
 
     const handlesubmit = async(e) => {
         e.preventDefault();
-        let data = await fetch("http://localhost:5000/profile", {
+        let data = await fetch(`${process.env.REACT_APP_API_URL}/profile`, {
             method: "put", 
             body: JSON.stringify({name, email, password}),
             headers: {

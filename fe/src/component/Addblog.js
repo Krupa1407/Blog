@@ -12,7 +12,7 @@ function Addblog() {
 
     const handlesubmit = async(e) => {
         e.preventDefault();
-        let data = await fetch("http://localhost:5000/blog", {
+        let data = await fetch(`${process.env.REACT_APP_API_URL}/blog`, {
             method: "post", 
             body: JSON.stringify({title, content, author, category, country,city}),
             headers: {

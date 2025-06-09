@@ -9,7 +9,7 @@ const Sport = ({category}) => {
   const [blogs, setBlogs] = useState([]);
 
     const allblogs = async() => {
-        let data = await fetch(`http://localhost:5000/blogs/${category}`,{
+        let data = await fetch(`${process.env.REACT_APP_API_URL}/blogs/${category}`,{
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
