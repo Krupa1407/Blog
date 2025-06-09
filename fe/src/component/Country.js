@@ -12,7 +12,7 @@ function Country() {
 
   const fetchblogs = async () => {
     try {
-      let blogs = await fetch(`http://localhost:5000/country/${country}`, {
+      let blogs = await fetch(`${process.env.REACT_APP_API_URL}/country/${country}`, {
         method: "get",
         headers: {
           "Content-Type": "application/json"

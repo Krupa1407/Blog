@@ -12,7 +12,7 @@ function Login() {
 
     const handlesubmit = async(e) => {
         e.preventDefault();
-        let data = await fetch("http://localhost:5000/login", {
+        let data = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
             method: "post", 
             body: JSON.stringify({ email, password}),
             headers: {

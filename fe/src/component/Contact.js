@@ -12,7 +12,7 @@ const Contact = () => {
 
     const handlesubmit = async(e) => {
         e.preventDefault();
-        let data = await fetch("http://localhost:5000/contact", {
+        let data = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
             method: "post", 
             body: JSON.stringify({name, email, phone, address, message}),
             headers: {

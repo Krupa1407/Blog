@@ -12,7 +12,7 @@ function Category() {
 
   const fetchblogs = async () => {
     try {
-      let blogs = await fetch(`http://localhost:5000/category/${category}`, {
+      let blogs = await fetch(`${process.env.REACT_APP_API_URL}/category/${category}`, {
         method: "get",
         headers: {
           "Content-Type": "application/json"
